@@ -1,0 +1,12 @@
+#listdiv{
+    background-color: lightgray;
+  }
+#cardsstyle{
+    margin-top: 1%;
+    align-self: center;
+    width: 50%;
+    transform: translate(10%);
+}
+.grad{
+  background-image: linear-gradient(grey,white);
+}

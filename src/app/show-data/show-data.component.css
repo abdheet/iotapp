@@ -1,0 +1,15 @@
+.formdata
+{
+    border: 2px solid black;
+    border-radius: 5%;
+    padding: 3%; 
+   transform: translate(20%,50%);
+  top: -50%; 
+}
+/* .lindData{
+    transform: translate(0,50%);
+  top: -50%;
+} */
+.grad{
+  background-image: linear-gradient(grey,white);
+}

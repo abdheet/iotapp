@@ -1,0 +1,52 @@
+<div class=" container">
+    <div class="row custom-wrapper">
+        <div class="col-md-2">
+
+        </div>
+        <div class="formdata col-md-6">
+
+            <form class="needs-validation" novalidate [formGroup]="generateReport" (ngSubmit)="onFormSubmit()">
+
+
+
+
+
+                <div class="form-group">
+                    <label for="applicationName">Enter Application</label>
+                    <select class="dropdown" class="form-control" id="applicationname" formControlName="applicationname"
+                        #applicationname>
+                        <option selected>Select</option>
+                        <option *ngFor="let application of newData">{{application.applicationname}}</option>
+                    </select>
+
+
+                </div>
+                <div class="text-center">
+                    <input style="margin-top: 2%;" type="date" formControlName="startDate"
+                        value="{{ post.startDate | date:'dd-MM-yyyy' }}"><br>
+
+                    <button style="margin-top: 3%;" class="btn btn-primary" type="submit"
+                        >Submit</button>
+
+                </div>
+            </form>
+
+        </div>
+        <div class="col-md-1">
+
+        </div>
+
+        <div class="lindData col-md-3">
+            <div *ngIf="str5.length>0">
+
+<p>Click <a href="{{str5}}">here</a> to download the report!</p>
+            
+               
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>

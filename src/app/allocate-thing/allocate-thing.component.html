@@ -1,0 +1,31 @@
+
+<div class="grad card-body">
+  <form class="needs-validation" novalidate [formGroup]="AllocateThing" (ngSubmit)="onFormSubmit()">
+<div class="form-group col-6 .col-md-4" id="addform">
+  <h3>Register Thing</h3>
+
+
+<div class="form-group">
+  <label for="deviceName">Select Device</label>
+  <select class="dropdown"class="form-control"id="deviceName"formControlName="deviceName"#deviceName>
+  <option selected>Select</option>
+  <option *ngFor="let data of newArray">{{data}}</option>
+  </select>
+  
+  </div>
+
+<div class="form-group" style="margin-top: 25px">
+<label for="applicationname">Enter Application</label>
+<select class="dropdown"class="form-control"id="applicationname"formControlName="applicationname"#applicationname>
+<option selected>Select</option>
+<option *ngFor="let application of newData">{{application.applicationname}}</option>
+</select>
+
+</div>
+
+
+
+<button class="btn btn-primary"type="submit" [disabled]="!AllocateThing.valid">Submit</button>
+</div>
+</form>
+</div>

@@ -1,0 +1,32 @@
+.grad{
+  background-image: linear-gradient(grey,white);
+}
+#addform{
+    background-color: rgba(234, 236, 236,0.8);
+      transform: translate(-50%);
+      margin-left: 50%;
+      top: 120px;
+      height: 354px;
+      width: 590px;
+      padding: 23px;
+      border: 2px solid black;
+      border-radius: 29px;
+    }
+    #addform h3{
+     
+      padding-top: 20px;
+      text-align: center;
+      margin-bottom: 30px;
+      display: inline-block;
+      margin-left: 50%;
+      transform: translate(-50%);
+      /* border: 2px solid; */
+      border-radius: 15px;
+      padding: 10px;  
+    }
+    
+    .btn{
+      margin-top: 10px;
+      margin-left: 50%;
+      transform: translate(-50%);
+    }

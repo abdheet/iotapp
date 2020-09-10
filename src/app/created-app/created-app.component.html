@@ -1,0 +1,19 @@
+<div class="grad card mb-3 "  style=" cursor: pointer;">
+    <div class="row no-gutters" id="cardsstyle" *ngFor = "let i of newData">
+      
+
+      <div class="col-md-8" id="listdiv">
+        <div class="card-body" >
+          
+          <h4 class="card-title">App Name : {{i.applicationname}} </h4>
+          
+          <button class="btn btn-info" (click)="details(i)">Details </button>
+
+        </div>
+      </div>
+
+  
+    
+    </div>
+   
+  </div>

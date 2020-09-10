@@ -1,0 +1,13 @@
+.leftside{
+  border: 2px solid black;
+  border-radius: 5%;
+  padding: 3%;
+}
+.rightside{
+  border: 2px solid black;
+  border-radius: 5%;
+  padding: 3%;
+}
+.grad{
+  background-image: linear-gradient(grey,white);
+}

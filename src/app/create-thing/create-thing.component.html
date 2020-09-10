@@ -1,0 +1,101 @@
+<div class="jumbotron grad text-center">
+  <h1 class="display-5">
+    Create a new Application
+  </h1>
+</div>
+
+<div class=" container">
+  <div class="row custom-wrapper">
+    <div class="leftside col-md-6">
+
+     
+      <form [formGroup]="registrationForm">
+        <div class="group-gap">
+          <div class="d-block my-3">
+
+
+            <div class="mb-3">
+
+              <select class="form-control" formControlName="SensorName">
+                <option class="dropdown-menu" value="Any" selected >Choose your Sensor</option>
+                <option class="dropdown-item" value="PressureSensor">Pressure Sensor</option>
+                <option class="dropdown-item" value="tempsensor">Temperature Sensor</option>
+                <option class="dropdown-item" value="OpticalSensor">Optical Sensor</option>
+                <option class="dropdown-item" value="heightsensor">Height Sensor</option>
+                <option class="dropdown-item" value="gpssensor">GPS Sensor</option>
+              </select>
+              <div *ngIf="SensorName.value != 'Any' && SensorName.value != ''">
+
+
+                <select style="margin-top: 2%;" class="custom-select" formControlName="SensorType">
+                  <option value="1">Range</option>
+                  <option value="2">Boolean</option>
+                </select>
+              </div>
+
+
+              <div style="margin-top: 2%;" *ngFor="let slider of sliders">
+                <div *ngIf="SensorType.value== '1'">
+
+
+                  <div *ngIf="SensorName.value == slider.start">
+
+
+                    <ng5-slider [(value)]="slider.value" [(highValue)]="slider.highValue"
+                      [options]="sliderOptions(slider)" formControlName="Threshold"></ng5-slider>
+                  </div>
+                </div>
+
+               
+              </div>
+              <div *ngIf="SensorType.value == '2'">
+
+                <select style="margin-top: 2%;" class="custom-select" formControlName="SensorBoolean">
+                  <option ngValue=true selected>True</option>
+                  <option ngValue=false>False</option>
+                </select>
+        
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+
+
+      </form>
+      <div class="text-center">
+        <button class="btn btn-primary mb-2"  [disabled]="!SensorType.valid" (click)="onAddbutton()">Add</button>
+      </div>
+     
+    </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="rightside col-md-4">
+      <form [formGroup]="ThingNameForm">
+
+        <input style="margin-top: 3%;" class="form-control" placeholder="ApplicationName" id="Thingname" formControlName="ThingName">
+
+
+
+      </form>
+        <ul *ngFor="let data of dataArray" [ngValue]="data">{{data.SensorName}}
+          <li> <sub>{{data.Threshold}}</sub>
+          </li>
+        </ul>
+  
+        <ul *ngFor="let dataNew of booleanArray" [ngValue]="dataNew">{{dataNew.SensorName}}
+          <li> <sub>{{dataNew.SensorBoolean}}</sub>
+          </li>
+        </ul>
+    
+      <button type="submit" style="margin-top: 2%;" class="btn btn-danger btn-lg btn-block" [disabled]="!ThingName.valid" (click)="onSubmit()">
+        Submit</button>
+
+
+    </div>
+
+
+  </div>
